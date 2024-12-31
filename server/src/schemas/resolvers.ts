@@ -1,5 +1,5 @@
 import User from '../models/index.js';
-import { signToken, AuthenticationError } from '../services/auth.js';
+import { signToken, AuthenticationError } from '../utils/auth.js';
 
 interface LoginUserArgs {
     email: string;
@@ -56,7 +56,7 @@ const resolvers = {
         },
         saveBook: async (_parent: any, { input }: AddBookArgs, context: any) => {
             if (!context.user) {
-                throw new AuthenticationError;
+                throw new AuthenticationError('Could not authenticate user.');
             }
             return User.findOneAndUpdate(
                 { _id: context.user._id },
@@ -73,7 +73,7 @@ const resolvers = {
         },
         removeBook: async (_parent: any, { bookId }: { bookId: string }, context: any) => {
             if (!context.user) {
-                throw new AuthenticationError;
+                throw new AuthenticationError('Could not authenticate user.');
             }
             return User.findOneAndUpdate(
                 { _id: context.user._id },

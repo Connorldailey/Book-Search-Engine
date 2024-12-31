@@ -34,4 +34,5 @@ export class AuthenticationError extends GraphQLError {
         super(message, undefined, undefined, undefined, ['UNAUTHENTICATED']);
         Object.defineProperty(this, 'name', { value: 'AuthenticationError' });
     }
-};
+  };
+  
