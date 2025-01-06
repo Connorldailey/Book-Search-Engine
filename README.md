@@ -68,6 +68,8 @@ To use the application, visit the [live site](https://book-search-engine-n0dv.on
 5. **Logout**
     - When you’re done, click Logout to end your session. The navigation reverts to Search and Login/Signup options.
 
+![Book Search Engine](./client/src/assets/images/bookSearchEngine.png)
+
 ## Credits 
 
 Special thanks to The Ohio State University Coding Bootcamp for providing foundational resources and support throughout the development of this project.
