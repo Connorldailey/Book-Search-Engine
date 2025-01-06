@@ -30,6 +30,12 @@ const typeDefs = `
         link: String
     }
 
+    input AddUserInput {
+        username: String!
+        email: String!
+        password: String!
+    }
+
     type Query {
         me: User
     }
@@ -40,13 +46,9 @@ const typeDefs = `
             password: String!
         ): Auth
 
-        addUser(
-            username: String!, 
-            email: String!, 
-            password: String!
-        ): Auth
+        addUser(input: AddUserInput!): Auth
 
-        saveBook(bookData: BookInput!): User
+        saveBook(input: BookInput!): User
 
         removeBook(bookId: String!): User
         

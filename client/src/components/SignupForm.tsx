@@ -34,7 +34,7 @@ const SignupForm = ({}: { handleModalClose: () => void }) => {
 
     try {
       const { data } = await addUser({
-        variables: { input: { ...userFormData } },
+        variables: { input: { username: userFormData.username, email: userFormData.email, password: userFormData.password } },
       });
 
       if (!data) {
